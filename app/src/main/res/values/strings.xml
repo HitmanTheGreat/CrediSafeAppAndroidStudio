@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CrediSafe</string>
+    <string name="prompt_email">email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign In</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="national_id">00000000A00</string>
+    <string name="pin">0000</string>
+    <string name="login">Login</string>
+    <string name="to_signup">Signup</string>
+    <string name="signup">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="firstname">Gerald</string>
+    <string name="surname">Sibanda</string>
+    <string name="forenames">Mufaro Justice</string>
+    <string name="dob">dd/mm/yyyy</string>
+    <string name="gender_description">Male/Female</string>
+    <string name="address">address</string>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="marital_status">
+        <item>Single</item>
+        <item>Maried</item>
+        <item>Devoced</item>
+    </string-array>
+</resources>
