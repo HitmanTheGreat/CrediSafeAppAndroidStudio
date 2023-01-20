@@ -1,4 +1,6 @@
+
 package com.example.credisafe.authentification;
+
 import static android.view.Gravity.CENTER;
 
 import android.content.Context;
@@ -17,6 +19,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.credisafe.R;
+import com.example.credisafe.api.InternetUtil;
+import com.example.credisafe.api.PostApi;
+import com.example.credisafe.authentification.ProfileRegister;
 import com.example.credisafe.model.Login;
 import com.example.credisafe.model.Individual;
 
@@ -31,7 +36,7 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
 
     EditText Edreg_username;
-    EditText Edreg_pin;
+    EditText Edreg_password;
     EditText Edreg_email;
 
     @Nullable
@@ -40,15 +45,15 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
 
 
-        View rootView = inflater.inflate(R.layout.profile_login, container, false);
+        View rootView = inflater.inflate(R.layout.activity_login, container, false);
 
 
         Button logBtn = (Button) rootView.findViewById(R.id.login_button);
-        Button to_reg_Btn = (Button) rootView.findViewById(R.id.to_registration_button);
+        Button to_reg_Btn = (Button) rootView.findViewById(R.id.to_register_button);
 
 
-        Edreg_username = (EditText) rootView.findViewById(R.id.reg_username);
-        Edreg_pin = (EditText) rootView.findViewById(R.id.reg_password);
+        Edreg_username = (EditText) rootView.findViewById(R.id.national_id);
+        Edreg_password = (EditText) rootView.findViewById(R.id.pin);
 //        Edreg_email = (EditText) rootView.findViewById(R.id.reg_email);
 
 
@@ -69,7 +74,7 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
             case R.id.login_button:
                 LogButtonClick();
                 break;
-            case R.id.to_registration_button:
+            case R.id.to_register_button:
                 RegButtonClick();
                 break;
         }
@@ -117,17 +122,17 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
 
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl(com.example.credisafe.PostApi.BASE_URL)
+                .baseUrl(PostApi.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.build();
 
-        com.example.credisafe.PostApi postApi = retrofit.create(com.example.credisafe.PostApi.class);
+        PostApi postApi = retrofit.create(PostApi.class);
 
 
 
 
         String add1      =  Edreg_username.getText().toString();
-        String add2      =  Edreg_pin.getText().toString();
+        String add2      =  Edreg_password.getText().toString();
 
         Login login = new Login(add1, add2);
 
@@ -154,9 +159,9 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
                         Toast.makeText(getContext(), token, Toast.LENGTH_SHORT).show();
 
-                        Fragment fragment = null;
-                        fragment = new Home();
-                        replaceFragment(fragment);
+//                        Fragment fragment = null;
+//                        fragment = new Home();
+//                        replaceFragment(fragment);
 
                     }
 
@@ -178,7 +183,7 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
 
 
-        if(Edreg_pin.getText().toString().isEmpty() || Edreg_username.getText().toString().isEmpty()){
+        if(Edreg_password.getText().toString().isEmpty() || Edreg_username.getText().toString().isEmpty()){
 
             Toast toast = Toast.makeText(getActivity(),"Empty EditText", Toast.LENGTH_LONG);
             toast.setGravity(CENTER|Gravity.CENTER_HORIZONTAL, 0, 0);

@@ -1,4 +1,7 @@
 package com.example.credisafe.model;
+import android.widget.EditText;
+import android.widget.Spinner;
+
 import java.time.LocalDate;
 public class Individual {
     private String national_id ;
@@ -28,12 +31,11 @@ public class Individual {
     private String next_of_kin ;
     private String phone_number ;
     private String relationship ;
+    private String token;
 
-    public  Individual(String national_id ,  String firstname , String fins_number , String surname , LocalDate dob
-            , String forenames , String gender, String marital_status , String address , String mobile, String landline
-            , String employer_name , String employer_email , String job_title , LocalDate date_of_employement , String risk_class
-            , String fk_indentification_type , Boolean is_client_entry , Boolean is_deleted , Boolean is_validated , String company_name,
-                           String status , String town , String district , String next_of_kin , String phone_number , String relationship){
+
+    public Individual(EditText edreg_national_id, EditText edreg_firstname, EditText edreg_fins_number, EditText edreg_email, EditText edreg_pin, EditText edreg_surname, EditText edreg_dob, EditText edreg_forenames, Spinner spreg_gender, Spinner edreg_marital_status, EditText edreg_address, EditText edreg_mobile, EditText edreg_landline, EditText edreg_employer_name, EditText company_name, EditText edreg_employer_email, EditText edreg_job_title, EditText edreg_date_of_employement, EditText edreg_risk_class, Spinner edreg_fk_indentification_type, Boolean is_client_entry, Boolean is_deleted, Boolean is_validated, String status, EditText edreg_town, EditText edreg_district, EditText edreg_next_of_kin, EditText edreg_phone_number, EditText edreg_relationship) {
+
 
         this.national_id = national_id ;
         this.firstname = firstname ;
@@ -55,7 +57,6 @@ public class Individual {
         this.is_client_entry= is_client_entry ;
         this.is_deleted = is_deleted ;
         this.is_validated = is_validated;
-        this.company_name =  company_name;
         this.status =  status;
         this.town =  town ;
         this.district =  district;
@@ -64,5 +65,18 @@ public class Individual {
         this.relationship =  relationship;
 
     }
+
+    public String getId(){
+        return national_id;
+    }
+
+    public void setId(int id){
+        this.national_id = national_id;
+    }
+
+    public String getToken(){
+        return token;
+    }
+
 
 }

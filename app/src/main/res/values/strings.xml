@@ -16,6 +16,17 @@
     <string name="dob">dd/mm/yyyy</string>
     <string name="gender_description">Male/Female</string>
     <string name="address">address</string>
+    <string name="landline">landline</string>
+    <string name="employer_name">Employer</string>
+    <string name="email">Your Email</string>
+    <string name="employer_email">Employer Email</string>
+    <string name="spinner_identification_type">Nationalid / Passprt / ...</string>
+    <string name="town">Town</string>
+    <string name="district">District</string>
+    <string name="next_of_kin">next of kin</string>
+    <string name="next_of_kin_number">next_of_kin_number</string>
+    <string name="next_of_kin_relationship">next of kin rel</string>
+    <string name="phone_number">PhoneNumber</string>
 
     <string-array name="genders">
         <item>Male</item>
@@ -26,5 +37,10 @@
         <item>Single</item>
         <item>Maried</item>
         <item>Devoced</item>
+    </string-array>
+    <string-array name="identification_type">
+        <item>National_Id</item>
+        <item>PassPort</item>
+        <item>...</item>
     </string-array>
 </resources>

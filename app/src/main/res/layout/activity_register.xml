@@ -5,8 +5,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/teal_200">
 
-    <LinearLayout
+          <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -16,6 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
+
 
         <EditText
             android:id="@+id/national_id"
@@ -70,10 +76,19 @@
 
         <Spinner
             android:id="@+id/spinner_gender"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/gender_description"
+            android:minHeight="48dp">
+
+        </Spinner>
+
+        <Spinner
+            android:id="@+id/spinner_identification_type"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/spinner_identification_type"
             android:minHeight="48dp">
 
         </Spinner>
@@ -102,7 +117,7 @@
         </EditText>
 
         <EditText
-            android:id="@+id/reg_pin"
+            android:id="@+id/pin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -126,6 +141,146 @@
 
         </EditText>
 
+        <EditText
+            android:id="@+id/landline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/landline"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/employer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/employer_name"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/phone_number"
+            android:inputType="textEmailAddress"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+        <EditText
+            android:id="@+id/employer_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/employer_email"
+            android:inputType="textEmailAddress"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+              <EditText
+            android:id="@+id/town"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/town"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+              <EditText
+            android:id="@+id/district"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/district"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+              <EditText
+            android:id="@+id/next_of_kin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/next_of_kin"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+              <EditText
+            android:id="@+id/next_of_kin_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/next_of_kin_number"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+              <EditText
+            android:id="@+id/next_of_kin_relationship"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/next_of_kin_relationship"
+            android:inputType="text"
+            android:maxLength="40"
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck">
+
+        </EditText>
+
+              <Spinner
+                  android:id="@+id/coursesspinner"
+                  android:layout_height="50dp"
+                  android:layout_width="160dp"
+                  android:layout_marginEnd="10dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginBottom="10dp"
+                  android:layout_marginTop="10dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"/>
+
+
         <Button
             android:id="@+id/sign_up_btn"
             android:layout_width="match_parent"
@@ -139,5 +294,7 @@
             android:text="@string/log_in" />
 
     </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

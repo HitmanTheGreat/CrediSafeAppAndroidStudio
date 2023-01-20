@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,33 +18,34 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:padding="300dp"
             android:layout_gravity="center">
 
         </ImageView>
 
         <EditText
-            android:id="@+id/Editreg_national_id"
+            android:id="@+id/national_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/national_id"
             android:inputType="text"
             android:maxLength="11"
-            tools:ignore="TouchTargetSizeCheck">
+            >
 
         </EditText>
-
         <EditText
-            android:id="@+id/Editreg_pin"
+            android:id="@+id/pin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/pin"
             android:inputType="text"
             android:maxLength="4"
-            tools:ignore="TouchTargetSizeCheck">
+            >
 
         </EditText>
 

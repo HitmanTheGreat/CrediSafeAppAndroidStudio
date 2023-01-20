@@ -3,8 +3,13 @@ package com.example.credisafe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.credisafe.authentification.ProfileLogin;
+
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 

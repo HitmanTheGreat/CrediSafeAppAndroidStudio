@@ -1,6 +1,6 @@
 
 
-package com.example.credisafe.api;
+package com.example.credisafe.authentification;
 
 import com.example.credisafe.model.Individual;
 import com.example.credisafe.model.Login;

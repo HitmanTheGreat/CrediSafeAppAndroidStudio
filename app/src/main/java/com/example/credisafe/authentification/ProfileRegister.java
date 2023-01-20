@@ -18,8 +18,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.credisafe.R;
+import com.example.credisafe.api.InternetUtil;
+import com.example.credisafe.api.PostApi;
 import com.example.credisafe.authentification.ProfileLogin;
-import com.example.rest_connector_blog.model.User;
+import com.example.credisafe.model.Individual;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,34 +32,35 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileRegister extends Fragment implements View.OnClickListener {
 
-
     EditText Edreg_national_id;
     EditText Edreg_firstname ;
     EditText Edreg_fins_number ;
+    EditText Edreg_email ;
+    EditText Edreg_pin ;
     EditText Edreg_surname ;
     EditText Edreg_dob ;
     EditText Edreg_forenames ;
     Spinner Spreg_gender;
     Spinner Edreg_marital_status ;
     EditText Edreg_address ;
-    String mobile;
-    String landline ;
-    String employer_name ;
-    String employer_email ;
-    String job_title ;
-    LocalDate date_of_employement ;
-    String risk_class ;
-    String fk_indentification_type ;
+    EditText Edreg_mobile;
+    EditText Edreg_landline ;
+    EditText Edreg_employer_name ;
+    EditText company_name ;
+    EditText Edreg_employer_email ;
+    EditText Edreg_job_title ;
+    EditText Edreg_date_of_employement ;
+    EditText Edreg_risk_class ;
+    Spinner Edreg_fk_indentification_type ;
     Boolean is_client_entry ;
     Boolean is_deleted ;
     Boolean is_validated ;
-    String company_name;
     String status ;
-    String town ;
-    String district ;
-    String next_of_kin ;
-    String phone_number ;
-    String relationship ;
+    EditText Edreg_town ;
+    EditText Edreg_district ;
+    EditText Edreg_next_of_kin ;
+    EditText Edreg_phone_number ;
+    EditText Edreg_relationship ;
 
     @Nullable
     @Override
@@ -67,25 +71,59 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.activity_register, container, false);
 
 
+
+
         //spinner Gender
         Spinner spinnerGenders=rootView.findViewById(R.id.spinner_gender);
-        ArrayAdapter<CharSequence> genderAdapter=ArrayAdapter.createFromResource(this, R.array.genders, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> genderAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.genders, android.R.layout.simple_spinner_item);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerGenders.setAdapter(genderAdapter);
 
         //Spinner Marital Status
         Spinner spinnerMaritalStatus=rootView.findViewById(R.id.spinner_marital_status);
-        ArrayAdapter<CharSequence> maritalStatusAdapter=ArrayAdapter.createFromResource(this, R.array.marital_status, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> maritalStatusAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.marital_status, android.R.layout.simple_spinner_item);
         maritalStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerGenders.setAdapter(maritalStatusAdapter);
+
+        //Spinner Identification Type
+        Spinner spinnerIdentificationType =rootView.findViewById(R.id.spinner_marital_status);
+        ArrayAdapter<CharSequence> spinnerAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.identification_type, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerGenders.setAdapter(spinnerAdapter);
 
 
         Button regBtn = (Button) rootView.findViewById(R.id.sign_up_btn);
         Button logBtn = (Button) rootView.findViewById(R.id.to_login_button);
 
-        Edreg_national_id = (EditText) rootView.findViewById(R.id.reg_username);
-        Edreg_password = (EditText) rootView.findViewById(R.id.reg_password);
-        Edreg_email = (EditText) rootView.findViewById(R.id.reg_email);
+        Edreg_national_id = (EditText) rootView.findViewById(R.id.national_id);
+        Edreg_pin = (EditText) rootView.findViewById(R.id.pin);
+        Edreg_email = (EditText) rootView.findViewById(R.id.email);
+        Edreg_firstname = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_fins_number = (EditText) rootView.findViewById(R.id.firstname) ;
+        EditText Edreg_surname =  (EditText) rootView.findViewById(R.id.firstname) ;
+        EditText Edreg_dob = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_forenames = (EditText) rootView.findViewById(R.id.firstname);
+        Spreg_gender = (Spinner) rootView.findViewById(R.id.spinner_gender);
+        Edreg_marital_status = (Spinner) rootView.findViewById(R.id.spinner_marital_status);
+        EditText Edreg_address = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_mobile = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_landline = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_employer_name = (EditText) rootView.findViewById(R.id.firstname);
+        EditText company_name = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_employer_email = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_job_title = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_date_of_employement = (EditText) rootView.findViewById(R.id.firstname);
+        EditText Edreg_risk_class ;
+        Spinner Edreg_fk_indentification_type = (Spinner) rootView.findViewById(R.id.spinner_identification_type);
+        Boolean is_client_entry ;
+        Boolean is_deleted ;
+        Boolean is_validated ;
+        String status ;
+        Edreg_town = (EditText) rootView.findViewById(R.id.town);
+        Edreg_district = (EditText) rootView.findViewById(R.id.firstname);
+        Edreg_next_of_kin = (EditText) rootView.findViewById(R.id.district);
+        Edreg_phone_number = (EditText) rootView.findViewById(R.id.phone_number);
+        Edreg_relationship = (EditText) rootView.findViewById(R.id.next_of_kin_relationship);
 
 
         regBtn.setOnClickListener(this);
@@ -100,7 +138,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.registration_button:
+            case R.id.sign_up_btn:
                 RegButtonClick();
                 break;
             case R.id.to_login_button:
@@ -125,17 +163,14 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
     {
 
 
-        String str_reg_username = Edreg_username.getText().toString();
-        String str_reg_password = Edreg_password.getText().toString();
+        String str_reg_individualname = Edreg_national_id.getText().toString();
+        String str_reg_password = Edreg_pin.getText().toString();
         String str_reg_email = Edreg_email.getText().toString();
 
-
-        User userModel = new User(
-                1,
-                str_reg_email,
-                str_reg_username,
-                str_reg_password,
-                "sadasdasd"
+        Individual individualModel = new Individual(Edreg_national_id,Edreg_firstname ,Edreg_fins_number , Edreg_email ,
+                Edreg_pin ,  Edreg_surname ,  Edreg_dob , Edreg_forenames , Spreg_gender , Edreg_marital_status ,Edreg_address ,Edreg_mobile,Edreg_landline,Edreg_employer_name
+                ,company_name,Edreg_employer_email ,Edreg_job_title ,Edreg_date_of_employement  ,Edreg_risk_class  ,Edreg_fk_indentification_type
+                ,is_client_entry ,is_deleted   ,is_validated ,status ,Edreg_town,Edreg_district ,Edreg_next_of_kin ,Edreg_phone_number ,Edreg_relationship
         );
 
 
@@ -143,7 +178,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
         if (!IsEmptyEditTextLogin()){
 
             if ( InternetUtil.isInternetOnline(getActivity()) ){
-                RegisterInServer(userModel);
+                RegisterInServer(individualModel);
             }
 
         }
@@ -163,7 +198,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
     }
 
 
-    public void RegisterInServer(User userModel) {
+    public void RegisterInServer(Individual individualModel) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(PostApi.BASE_URL)
@@ -171,11 +206,11 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
                 .build();
 
         PostApi postApi= retrofit.create(PostApi.class);
-        Call<User> call = postApi.registrationUser(userModel);
+        Call<Individual> call = postApi.registrationIndividual(individualModel);
 
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<Individual>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<Individual> call, Response<Individual> response) {
 
                 if(response.isSuccessful()){
                     if (response.body() != null) {
@@ -196,7 +231,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
 
             }
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<Individual> call, Throwable t) {
                 Log.d("fail", "fail");
             }
         });
@@ -208,7 +243,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
     private Boolean IsEmptyEditTextLogin(){
 
 
-        if(Edreg_password.getText().toString().isEmpty() || Edreg_username.getText().toString().isEmpty()|| Edreg_email.getText().toString().isEmpty()){
+        if(Edreg_pin.getText().toString().isEmpty() || Edreg_national_id.getText().toString().isEmpty()|| Edreg_email.getText().toString().isEmpty()){
 
             Toast toast = Toast.makeText(getActivity(),"Empty EditText", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
