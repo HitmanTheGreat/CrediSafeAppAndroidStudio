@@ -27,18 +27,19 @@
     <string name="next_of_kin_number">next_of_kin_number</string>
     <string name="next_of_kin_relationship">next of kin rel</string>
     <string name="phone_number">PhoneNumber</string>
+    <string name="national_id_text">0000000A00</string>
 
-    <string-array name="genders">
+    <string-array name="gender_list">
         <item>Male</item>
         <item>Female</item>
     </string-array>
 
-    <string-array name="marital_status">
+    <string-array name="marital_status_list">
         <item>Single</item>
         <item>Maried</item>
         <item>Devoced</item>
     </string-array>
-    <string-array name="identification_type">
+    <string-array name="identification_list">
         <item>National_Id</item>
         <item>PassPort</item>
         <item>...</item>

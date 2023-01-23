@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -42,7 +43,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
     EditText Edreg_forenames ;
     Spinner Spreg_gender;
     Spinner Edreg_marital_status ;
-    EditText Edreg_address ;
+    TextView Edreg_address ;
     EditText Edreg_mobile;
     EditText Edreg_landline ;
     EditText Edreg_employer_name ;
@@ -71,25 +72,26 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
         View rootView = inflater.inflate(R.layout.activity_register, container, false);
 
 
+        //Spinner Identification Type
+        Spinner spinnerIdentificationType =rootView.findViewById(R.id.spinner_identification_type);
+        ArrayAdapter<CharSequence> spinnerAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.identification_list, android.R.layout.simple_spinner_item);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerIdentificationType.setAdapter(spinnerAdapter);
 
 
         //spinner Gender
         Spinner spinnerGenders=rootView.findViewById(R.id.spinner_gender);
-        ArrayAdapter<CharSequence> genderAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.genders, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> genderAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.gender_list, android.R.layout.simple_spinner_item);
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerGenders.setAdapter(genderAdapter);
 
         //Spinner Marital Status
         Spinner spinnerMaritalStatus=rootView.findViewById(R.id.spinner_marital_status);
-        ArrayAdapter<CharSequence> maritalStatusAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.marital_status, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> maritalStatusAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.marital_status_list, android.R.layout.simple_spinner_item);
         maritalStatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinnerGenders.setAdapter(maritalStatusAdapter);
+        spinnerMaritalStatus.setAdapter(maritalStatusAdapter);
 
-        //Spinner Identification Type
-        Spinner spinnerIdentificationType =rootView.findViewById(R.id.spinner_marital_status);
-        ArrayAdapter<CharSequence> spinnerAdapter=ArrayAdapter.createFromResource(rootView.getContext(), R.array.identification_type, android.R.layout.simple_spinner_item);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinnerGenders.setAdapter(spinnerAdapter);
+
 
 
         Button regBtn = (Button) rootView.findViewById(R.id.sign_up_btn);
@@ -105,7 +107,7 @@ public class ProfileRegister extends Fragment implements View.OnClickListener {
         EditText Edreg_forenames = (EditText) rootView.findViewById(R.id.firstname);
         Spreg_gender = (Spinner) rootView.findViewById(R.id.spinner_gender);
         Edreg_marital_status = (Spinner) rootView.findViewById(R.id.spinner_marital_status);
-        EditText Edreg_address = (EditText) rootView.findViewById(R.id.firstname);
+        TextView Edreg_address = (EditText) rootView.findViewById(R.id.firstname);
         EditText Edreg_mobile = (EditText) rootView.findViewById(R.id.firstname);
         EditText Edreg_landline = (EditText) rootView.findViewById(R.id.firstname);
         EditText Edreg_employer_name = (EditText) rootView.findViewById(R.id.firstname);

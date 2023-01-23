@@ -18,7 +18,7 @@ import retrofit2.http.Path;
 public interface PostApi {
 
 
-    String root = "http://192.168.100.18:8000/";
+    String root = "http://192.168.10.126:8000/";
 //    String root = "http://127.0.0.1:8000/";
 
 
@@ -28,6 +28,7 @@ public interface PostApi {
     String API_URL = root + "api/v1/";
 
 
+    
 
     @POST("api-token-auth/")
     Call<Individual> login(@Body Login login);
