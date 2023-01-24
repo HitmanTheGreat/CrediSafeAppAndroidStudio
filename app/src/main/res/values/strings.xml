@@ -44,4 +44,7 @@
         <item>PassPort</item>
         <item>...</item>
     </string-array>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

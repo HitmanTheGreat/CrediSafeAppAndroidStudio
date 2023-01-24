@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -21,7 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.credisafe.R;
 import com.example.credisafe.api.InternetUtil;
 import com.example.credisafe.api.PostApi;
-import com.example.credisafe.authentification.ProfileRegister;
+import com.example.credisafe.pages.Home;
 import com.example.credisafe.model.Login;
 import com.example.credisafe.model.Individual;
 
@@ -120,6 +119,11 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
 
     private void login(){
 
+
+        //bridge login
+        Fragment fragment = null;
+        fragment = new Home();
+        replaceFragment(fragment);
 
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(PostApi.BASE_URL)
