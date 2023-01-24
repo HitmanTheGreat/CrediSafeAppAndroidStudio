@@ -46,7 +46,7 @@
                 android:layout_height="50dp"
                 android:autofillHints=""
                 android:hint="@string/pin"
-                android:inputType="text"
+                android:inputType="numberPassword"
                 android:maxLength="4" />
 
             <Button
