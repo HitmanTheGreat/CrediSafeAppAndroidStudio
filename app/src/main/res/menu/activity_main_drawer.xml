@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:id="@+id/menu_first"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/home" />
+    </group>
+    <group android:id="@+id/menu_loans"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_loansowing"
+            android:icon="@drawable/ic_baseline_attach_money_24"
+            android:title="@string/loansowing" />
+        <item
+            android:id="@+id/nav_given_loan"
+            android:icon="@drawable/ic_baseline_money_24"
+            android:title="@string/loansgiven" />
+        <item
+            android:id="@+id/nav_creditstatus"
+            android:icon="@drawable/ic_baseline_auto_graph_24"
+            android:title="@string/creditstatus" />
+        <item
+            android:id="@+id/nav_give_loan"
+            android:icon="@drawable/ic_baseline_handshake_24"
+            android:title="@string/giveloan" />
+    </group>
+
+    <group android:id="@+id/menu_settings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_baseline_history_24"
+            android:title="@string/history" />
+        <item
+            android:id="@+id/nav_onbord"
+            android:icon="@drawable/ic_baseline_person_add_alt_1_24"
+            android:title="@string/onboard" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/settings" />
+    </group>
+
+    <group android:id="@+id/menu_exit"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="@string/logout" />
+    </group>
+</menu>

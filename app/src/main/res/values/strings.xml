@@ -59,8 +59,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_home">Menu</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">SlideShow</string>
+    <string name="menu_loans">Gallery</string>
+    <string name="menu_give_loan">SlideShow</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_navigation">navigation</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -68,5 +68,33 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="useremail">hitmantalmud@gmail.com</string>
+    <string name="name">Hitman T Sibanda</string>
+    <string name="menu_logout">Logout</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="loansowing">Loan Owing</string>
+    <string name="loansgiven">Loans Given</string>
+    <string name="creditstatus">Credit Status</string>
+    <string name="giveloan">Give Loan</string>
+    <string name="onboard">Onboard Someone</string>
+    <string name="home">Home</string>
+    <string name="description">ahiyshksjcnsa casjlhdnkahx</string>
+    <string name="title">Credit Status</string>
+    <string name="secondary_text">low Risk</string>
+    <string name="supporting_text">LML 244</string>
+    <string name="lownsowincount">count : (0)</string>
+    <string name="datetopayowinglown">09/09/23 : 19 :34:00</string>
+    <string name="lownsgivencount">count : (2)</string>
+    <string name="datetopaylowngiven">10/03/23 : 19:17:00</string>
+    <string name="check">check</string>
+    <string name="history">Transaction History</string>
+    <string name="title_activity_home_fragment">HomeFragment</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_loan_owing">Loan Owing</string>
+    <string name="menu_loan_given">Loan Given</string>
+    <string name="more">More Info</string>
 
 </resources>

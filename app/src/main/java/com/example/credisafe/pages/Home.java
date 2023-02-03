@@ -34,7 +34,7 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_navigation, container, false);
+        View rootView = inflater.inflate(R.layout.activity_home_fragment, container, false);
 
         return rootView;
 

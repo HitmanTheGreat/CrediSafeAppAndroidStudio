@@ -4,6 +4,7 @@ package com.example.credisafe.authentification;
 import static android.view.Gravity.CENTER;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.credisafe.HomeFragment;
 import com.example.credisafe.R;
 import com.example.credisafe.api.InternetUtil;
 import com.example.credisafe.api.PostApi;
@@ -108,6 +110,9 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
         if (!IsEmptyEditTextLogin()){
 
             if ( InternetUtil.isInternetOnline(getActivity()) ){
+
+                Intent intent = HomeFragment.makeIntent(ProfileLogin.this.getContext());
+                startActivity(intent);
                 login();
             }
 
@@ -121,10 +126,7 @@ public class ProfileLogin extends Fragment implements View.OnClickListener {
     private void login(){
 
 
-        //bridge login
-        Fragment fragment = null;
-        fragment = new Home();
-        replaceFragment(fragment);
+
 
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(PostApi.BASE_URL)

@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.credisafe.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_dashboard"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.credisafe.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_loansowing"
+        android:name="com.example.credisafe.ui.loanowing.LoanOwingFragment"
+        android:label="@string/menu_loan_owing"
+        tools:layout="@layout/fragment_loan_owing" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.credisafe.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_given_loan"
+        android:name="com.example.credisafe.ui.loansgiven.LoanGivenFragment"
+        android:label="@string/menu_loan_given"
+        tools:layout="@layout/fragment_loans_given" />
 </navigation>
